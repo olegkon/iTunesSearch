@@ -1,0 +1,56 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <img width="50" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+
+
+<h4>Please enter artist name:</h4>
+<input type="text" placeholder="Enter artist name" [formControl]="searchInput">
+<h4>{{musicData}}</h4>
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Artist Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Collection Name Column -->
+    <ng-container matColumnDef="collectionName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Collection Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.collectionName}} </mat-cell>
+    </ng-container>
+
+    <!-- Track Name Column -->
+    <ng-container matColumnDef="trackName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Track Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trackName}} </mat-cell>
+    </ng-container>
+
+    <!-- Collection Pic URL Column -->
+    <!-- <ng-container matColumnDef="album_pic_url">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Album picture </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.album_pic_url}} </mat-cell>
+    </ng-container> -->
+
+    <!-- Track View URL Column -->
+    <ng-container matColumnDef="trackViewUrl">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Track View URL </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.trackViewUrl}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

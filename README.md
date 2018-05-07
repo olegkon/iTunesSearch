@@ -1,10 +1,18 @@
-# ITunesSearch
+# ITunesSearch - test project to display iTunes data by (Artist) Name
+
+# Built using Angular5 and Angular Material2 table (and RxJS Observables), made it sortable
+
+
+Need to install NPM, Node and Angular CLI first
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.6.
 
 ## Development server
+Run    npm install
+Run `ng serve` for a dev server. 
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
